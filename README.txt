@@ -6,7 +6,7 @@ For this assignment, as I understand it, I need to build a system where you can 
 character has stats and equipment that compliment eachother (for example, updating character level increases 
 character attributes), and equipment can be character class specific.
 
-No character sheets or any front-end is required for this assignment, the code will be tested via user testing.
+No character sheets or any front-end is required for this assignment.
 
 Code wise, all I need to do is make classes with values that sometimes effect eachother when put together, and
 to test it with user testing. A lot of time and effort has gone in understanding the "game rules" from the 
