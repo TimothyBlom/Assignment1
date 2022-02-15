@@ -2,120 +2,207 @@ public class Character {
 
     String Name;
     String CharacterClass;
-    String Level;
-    String EquippedWeapon;
-    String EquippedHeadArmour;
-    String EquippedBodyArmour;
-    String EquippedLegArmour;
-    String Strength;
-    String Dexterity;
-    String Intelligence;
-    String BasePrimaryAttributes;
-    String TotalPrimaryAttributes;
-    String DPS;
+    int Level;
+    String EquippedWeaponType;
+    int EquippedWeaponDPS;
+    String EquippedHeadArmor;
+    int HeadArmorStrength;
+    int HeadArmorDexterity;
+    int HeadArmorIntelligence;
+    String EquippedBodyArmor;
+    int BodyArmorStrength;
+    int BodyArmorDexterity;
+    int BodyArmorIntelligence;
+    String EquippedLegArmor;
+    int LegArmorStrength;
+    int LegArmorDexterity;
+    int LegArmorIntelligence;
+    int CharacterStrength;
+    int CharacterDexterity;
+    int CharacterIntelligence;
+    int BasePrimaryAttributes;
+    int TotalPrimaryAttributes;
+    int DPS;
 
     public Character(
-            String Name,
-            String CharacterClass,
-            String Level,
-            String EquippedWeapon,
-            String EquippedHeadArmour,
-            String EquippedBodyArmour,
-            String EquippedLegArmour,
-            String Strength,
-            String Dexterity,
-            String Intelligence,
-            String BasePrimaryAttributes,
-            String TotalPrimaryAttributes,
-            String DPS
+        String Name,
+        String CharacterClass,
+        int Level,
+        String EquippedWeaponType,
+        int EquippedWeaponDPS,
+        String EquippedHeadArmor,
+        int HeadArmorStrength,
+        int HeadArmorDexterity,
+        int HeadArmorIntelligence,
+        String EquippedBodyArmor,
+        int BodyArmorStrength,
+        int BodyArmorDexterity,
+        int BodyArmorIntelligence,
+        String EquippedLegArmor,
+        int LegArmorStrength,
+        int LegArmorDexterity,
+        int LegArmorIntelligence,
+        int CharacterStrength,
+        int CharacterDexterity,
+        int CharacterIntelligence,
+        int BasePrimaryAttributes,
+        int TotalPrimaryAttributes,
+        int DPS
     ){
         this.Name = Name;
         this.CharacterClass = CharacterClass;
         this.Level = Level;
-        this.EquippedWeapon = EquippedWeapon;
-        this.EquippedHeadArmour = EquippedHeadArmour;
-        this.EquippedBodyArmour = EquippedBodyArmour;
-        this.EquippedLegArmour = EquippedLegArmour;
-        this.Strength = Strength;
-        this.Dexterity = Dexterity;
-        this.Intelligence = Intelligence;
+        this.EquippedWeaponType = EquippedWeaponType;
+        this.EquippedWeaponDPS = EquippedWeaponDPS;
+        this.EquippedHeadArmor = EquippedHeadArmor;
+        this.HeadArmorStrength = HeadArmorStrength;
+        this.HeadArmorDexterity = HeadArmorDexterity;
+        this.HeadArmorIntelligence = HeadArmorIntelligence;
+        this.EquippedBodyArmor = EquippedBodyArmor;
+        this.BodyArmorStrength = BodyArmorStrength;
+        this.BodyArmorDexterity = BodyArmorDexterity;
+        this.BodyArmorIntelligence = BodyArmorIntelligence;
+        this.EquippedLegArmor = EquippedLegArmor;
+        this.LegArmorStrength = LegArmorStrength;
+        this.LegArmorDexterity = LegArmorDexterity;
+        this.LegArmorIntelligence = LegArmorIntelligence;
+        this.CharacterStrength = CharacterStrength;
+        this.CharacterDexterity = CharacterDexterity;
+        this.CharacterIntelligence = CharacterIntelligence;
         this.BasePrimaryAttributes = BasePrimaryAttributes;
         this.TotalPrimaryAttributes = TotalPrimaryAttributes;
         this.DPS = DPS;
     }
 
-    public String getName() {
-        return Name;
-    };
-    public String getCharacterClass() {
-        return CharacterClass;
-    };
-    public String getLevel() {
-        return Level;
-    };
-    public String getEquippedWeapon() {
-        return EquippedWeapon;
-    };
-    public String getEquippedHeadArmour() {
-        return EquippedHeadArmour;
-    };
-    public String getEquippedBodyArmour() {
-        return EquippedBodyArmour;
-    };
-    public String getEquippedLegArmour() {
-        return EquippedLegArmour;
-    };
-    public String getStrength() {
-        return Strength;
-    };
-    public String getDexterity() {
-        return Dexterity;
-    };
-    public String getIntelligence() {
-        return Intelligence;
-    };
-    public String getBasePrimaryAttributes() {
-        return BasePrimaryAttributes;
-    };
-    public String getTotalPrimaryAttributes() {
-        return TotalPrimaryAttributes;
-    };
-    public String getDPS() {
-        return DPS;
-    };
-
     public static void main(String[] args) {
 
         Character player = new Character(
                 "Tim",
-                "Sniper",
-                "1",
-                "Assault Rifle Name",
+                "Heavy",
+                5,
+                "Assault Rifle",
+                0,
                 "Beskar Helmet",
+                0,
+                0,
+                0,
                 "Beskar Body Armor",
+                0,
+                0,
+                0,
                 "Beskar Pants",
-                "1",
-                "1",
-                "1",
-                "1",
-                "2",
-                "1"
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
         );
 
-        System.out.println("Name: " + player.getName());
-        System.out.println("Class: " + player.getCharacterClass());
-        System.out.println("Level: " + player.getLevel());
-        System.out.println("Equipped weapon: " + player.getEquippedWeapon());
-        System.out.println("Helmet: " + player.getEquippedHeadArmour());
-        System.out.println("Body armour: " + player.getEquippedBodyArmour());
-        System.out.println("Leg armour: " + player.getEquippedLegArmour());
-        System.out.println("Strength points: " + player.getStrength());
-        System.out.println("Dexterity points: " + player.getDexterity());
-        System.out.println("Intelligence points: " + player.getIntelligence());
-        System.out.println("Base primary attribute points: " + player.getBasePrimaryAttributes());
-        System.out.println("Total primary attribute points: " + player.getTotalPrimaryAttributes());
-        System.out.println("Total DPS: " + player.getDPS());
-        TestClass.TestMethod();
+        int CharacterStartStrength = 0;
+        int CharacterStartDexterity = 0;
+        int CharacterStartIntelligence = 0;
+
+        //starts player with the appropriate amount of attribute points based on character class
+        if (player.CharacterClass.equals("Engineer")) {
+            CharacterStartStrength = player.CharacterStrength + 1;
+            CharacterStartDexterity = player.CharacterDexterity + 1;
+            CharacterStartIntelligence = player.CharacterIntelligence + 8;
+        } else if (player.CharacterClass.equals("Medic")) {
+            CharacterStartStrength = player.CharacterStrength + 2;
+            CharacterStartDexterity = player.CharacterDexterity + 7;
+            CharacterStartIntelligence = player.CharacterIntelligence + 1;
+        } else if (player.CharacterClass.equals("Sniper")) {
+            CharacterStartStrength = player.CharacterStrength + 2;
+            CharacterStartDexterity = player.CharacterDexterity + 6;
+            CharacterStartIntelligence = player.CharacterIntelligence + 1;
+        } else if (player.CharacterClass.equals("Heavy")) {
+            CharacterStartStrength = player.CharacterStrength + 5;
+            CharacterStartDexterity = player.CharacterDexterity + 2;
+            CharacterStartIntelligence = player.CharacterIntelligence + 1;
+        }
+
+        int CharacterStrength = 0;
+        int CharacterDexterity = 0;
+        int CharacterIntelligence = 0;
+
+        //adds appropriate amount of attribute points based on character level and class
+        for (int i = 1; i <= player.Level; ++i) {
+            if (player.CharacterClass.equals("Engineer")) {
+                CharacterStrength = CharacterStartStrength + 1;
+                CharacterDexterity = CharacterStartDexterity + 4;
+                CharacterIntelligence = CharacterStartIntelligence + 5;
+                System.out.println("ENGINEER CLASS LEVELD UP");
+            } else if (player.CharacterClass.equals("Medic")) {
+                CharacterStrength = CharacterStartStrength + 1;
+                CharacterDexterity = CharacterStartDexterity + 5;
+                CharacterIntelligence = CharacterStartIntelligence + 1;
+                System.out.println("MEDIC CLASS LEVELD UP");
+            } else if (player.CharacterClass.equals("Sniper")) {
+                CharacterStrength = CharacterStartStrength + 1;
+                CharacterDexterity = CharacterStartDexterity + 4;
+                CharacterIntelligence = CharacterStartIntelligence + 1;
+                System.out.println("SNIPER CLASS LEVELD UP");
+            } else if (player.CharacterClass.equals("Heavy")) {
+                CharacterStrength = CharacterStartStrength + 3;
+                CharacterDexterity = CharacterStartDexterity + 2;
+                CharacterIntelligence = CharacterStartIntelligence + 1;
+                System.out.println("HEAVY CLASS LEVELD UP " + CharacterStrength);
+            }
+        }
+
+        //Makes base attribute same value as the class specific primary attribute.
+        int BaseAttributePoints = 0;
+        int HeadAttributePoints = 0;
+        int BodyAttributePoints = 0;
+        int LegAttributePoints = 0;
+
+        if (player.CharacterClass.equals("Engineer")) {
+            BaseAttributePoints = CharacterIntelligence;
+            HeadAttributePoints = player.HeadArmorIntelligence;
+            BodyAttributePoints = player.BodyArmorIntelligence;
+            LegAttributePoints = player.LegArmorIntelligence;
+        } else if (player.CharacterClass.equals("Medic")){
+            BaseAttributePoints = CharacterDexterity;
+            HeadAttributePoints = player.HeadArmorDexterity;
+            BodyAttributePoints = player.BodyArmorDexterity;
+            LegAttributePoints = player.LegArmorDexterity;
+        } else if (player.CharacterClass.equals("Sniper")){
+            BaseAttributePoints = CharacterDexterity;
+            HeadAttributePoints = player.HeadArmorDexterity;
+            BodyAttributePoints = player.BodyArmorDexterity;
+            LegAttributePoints = player.LegArmorDexterity;
+        } else if (player.CharacterClass.equals("Heavy")){
+            BaseAttributePoints = CharacterStrength;
+            HeadAttributePoints = player.HeadArmorStrength;
+            BodyAttributePoints = player.BodyArmorStrength;
+            LegAttributePoints = player.LegArmorStrength;
+        }
+
+        //Calculates total amount of primary attribute points by adding attribute points from base and armor.
+        int totalPrimaryAttributes = BaseAttributePoints + HeadAttributePoints + BodyAttributePoints + LegAttributePoints;
+
+        //Calculates total character DPS by adding base character DPS with Weapon DPS.
+        int characterDPS = player.EquippedWeaponDPS + player.DPS;
+
+        //character sheet
+        System.out.println("Name: " + player.Name);
+        System.out.println("Class: " + player.CharacterClass);
+        System.out.println("Level: " + player.Level);
+        System.out.println("Equipped weapon name: " + player.EquippedWeaponType);
+        System.out.println("Helmet: " + player.EquippedHeadArmor);
+        System.out.println("Body armour: " + player.EquippedBodyArmor);
+        System.out.println("Leg armour: " + player.EquippedLegArmor);
+        System.out.println("Strength points: " + CharacterStrength);
+        System.out.println("Dexterity points: " + CharacterDexterity);
+        System.out.println("Intelligence points: " + CharacterIntelligence);
+        System.out.println("Base primary attribute points: " + BaseAttributePoints);
+        System.out.println("Total primary attribute points: " + totalPrimaryAttributes);
+        System.out.println("Total character DPS: " + characterDPS);
+        ClassMedic.Medic(); //delete this
 
     }
 }

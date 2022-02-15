@@ -1,5 +1,8 @@
 public class TestClass {
+
+    String TestText = "Yellooo boy";
+
     public static void TestMethod(){
-        System.out.println("Here we go boyyy");
+//        return String TestText;
     }
 }

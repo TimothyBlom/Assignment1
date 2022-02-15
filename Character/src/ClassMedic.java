@@ -1,8 +1,8 @@
-public class Class {
+public class ClassMedic {
 
     static String ClassName;
 
-    public Class(String ClassName){
+    public ClassMedic(String ClassName){
         this.ClassName = ClassName;
     }
 
@@ -12,7 +12,7 @@ public class Class {
 
     public static void Medic() {
 
-        Class newName = new Class("Medic");
+        Class newName = new Class("This sentence comes from the Medic Class... class");
 
         System.out.println(newName.getClassName());
 

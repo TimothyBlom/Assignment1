@@ -1,8 +1,8 @@
-public class Class {
+public class ClassEngineer {
 
     static String ClassName;
 
-    public Class(String ClassName){
+    public ClassEngineer(String ClassName){
         this.ClassName = ClassName;
     }
 
@@ -10,9 +10,9 @@ public class Class {
         return ClassName;
     };
 
-    public static void Medic() {
+    public static void Engineer() {
 
-        Class newName = new Class("Medic");
+        Class newName = new Class("Medic bitch");
 
         System.out.println(newName.getClassName());
 
