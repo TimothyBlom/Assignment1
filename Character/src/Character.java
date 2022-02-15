@@ -79,7 +79,7 @@ public class Character {
         Character player = new Character(
                 "Tim",
                 "Heavy",
-                5,
+                1,
                 "Assault Rifle",
                 0,
                 "Beskar Helmet",
@@ -125,31 +125,31 @@ public class Character {
             CharacterStartIntelligence = player.CharacterIntelligence + 1;
         }
 
-        int CharacterStrength = 0;
-        int CharacterDexterity = 0;
-        int CharacterIntelligence = 0;
+        int CharacterStrength = CharacterStartStrength;
+        int CharacterDexterity = CharacterStartDexterity;
+        int CharacterIntelligence = CharacterStartIntelligence;
 
         //adds appropriate amount of attribute points based on character level and class
-        for (int i = 1; i <= player.Level; ++i) {
+        for (int i = 2; i <= player.Level; ++i) {
             if (player.CharacterClass.equals("Engineer")) {
-                CharacterStrength = CharacterStartStrength + 1;
-                CharacterDexterity = CharacterStartDexterity + 4;
-                CharacterIntelligence = CharacterStartIntelligence + 5;
+                CharacterStrength = CharacterStrength + 1;
+                CharacterDexterity = CharacterDexterity + 4;
+                CharacterIntelligence = CharacterIntelligence + 5;
                 System.out.println("ENGINEER CLASS LEVELD UP");
             } else if (player.CharacterClass.equals("Medic")) {
-                CharacterStrength = CharacterStartStrength + 1;
-                CharacterDexterity = CharacterStartDexterity + 5;
-                CharacterIntelligence = CharacterStartIntelligence + 1;
+                CharacterStrength = CharacterStrength + 1;
+                CharacterDexterity = CharacterDexterity + 5;
+                CharacterIntelligence = CharacterIntelligence + 1;
                 System.out.println("MEDIC CLASS LEVELD UP");
             } else if (player.CharacterClass.equals("Sniper")) {
-                CharacterStrength = CharacterStartStrength + 1;
-                CharacterDexterity = CharacterStartDexterity + 4;
-                CharacterIntelligence = CharacterStartIntelligence + 1;
+                CharacterStrength = CharacterStrength + 1;
+                CharacterDexterity = CharacterDexterity + 4;
+                CharacterIntelligence = CharacterIntelligence + 1;
                 System.out.println("SNIPER CLASS LEVELD UP");
             } else if (player.CharacterClass.equals("Heavy")) {
-                CharacterStrength = CharacterStartStrength + 3;
-                CharacterDexterity = CharacterStartDexterity + 2;
-                CharacterIntelligence = CharacterStartIntelligence + 1;
+                CharacterStrength = CharacterStrength + 3;
+                CharacterDexterity = CharacterDexterity + 2;
+                CharacterIntelligence = CharacterIntelligence + 1;
                 System.out.println("HEAVY CLASS LEVELD UP " + CharacterStrength);
             }
         }
