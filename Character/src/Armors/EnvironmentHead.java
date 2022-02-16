@@ -1,6 +1,6 @@
 package Armors;
 
-public class BeskarLegs {
+public class EnvironmentHead {
 
     String name;
     int lvlRequired;
@@ -10,7 +10,7 @@ public class BeskarLegs {
     int dexterity;
     int intelligence;
 
-    public BeskarLegs (
+    public EnvironmentHead (
             String name,
             int lvlRequired,
             String slot,
@@ -29,11 +29,11 @@ public class BeskarLegs {
     }
 
     public static void main(){
-        BeskarLegs beskarLegs = new BeskarLegs(
-                "Beskar Legs Armor",
+        EnvironmentHead environmentHead = new EnvironmentHead(
+                "Environment Head Armor",
                 1,
-                "Leg",
-                "Beskar",
+                "Head",
+                "Environment",
                 1,
                 1,
                 1

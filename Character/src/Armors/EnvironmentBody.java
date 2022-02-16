@@ -1,6 +1,6 @@
 package Armors;
 
-public class CommandoLegs {
+public class EnvironmentBody {
 
         String name;
         int lvlRequired;
@@ -10,7 +10,7 @@ public class CommandoLegs {
         int dexterity;
         int intelligence;
 
-        public CommandoLegs (
+        public EnvironmentBody (
                 String name,
                 int lvlRequired,
                 String slot,
@@ -29,11 +29,11 @@ public class CommandoLegs {
         }
 
         public static void main(){
-            CommandoLegs commandoLegs = new CommandoLegs(
-                    "Commando Leg Armor",
+            Armors.EnvironmentBody environmentBody = new Armors.EnvironmentBody(
+                    "Environment Body Armor",
                     1,
-                    "Leg",
-                    "Commando",
+                    "Head",
+                    "Environment",
                     1,
                     1,
                     1

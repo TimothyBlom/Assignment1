@@ -28,7 +28,5 @@ public class Weapon {
                 1,
                 1
         );
-
-        System.out.println(equippedWeapon.name);
     }
 }
