@@ -65,7 +65,7 @@ Each weapon has the following values:
 
 Armor:
 -Stealth (usable only to Sniper class) (lore: near invisible but minimal protection)
--Enviroment (usable only for Engineer & Medic class) (lore: protect user against enviromental dangers)
+-Environment (usable only for Engineer & Medic class) (lore: protect user against enviromental dangers)
 -Commando (usable only for Heavy , Engineer & Medic classes) (lore: best all arround damage protection)
 -Beskar plating (usable only for Heavy class) (lore: indestructable but flashy)
 

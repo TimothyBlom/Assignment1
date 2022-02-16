@@ -1,20 +1,18 @@
 public class Class {
 
-    static String ClassName;
+    static String ClassType;
 
-    public Class(String ClassName){
-        this.ClassName = ClassName;
+    public Class(
+            String ClassType
+    ){
+        this.ClassType = ClassType;
     }
 
-    public String getClassName() {
-        return ClassName;
-    };
+    public static void Class(String[] args) throws Exception{
 
-    public static void Medic() {
+        Class playerClass = new Class("Medic");
 
-        Class newName = new Class("Medic");
-
-        System.out.println(newName.getClassName());
+        System.out.println(playerClass.ClassType);
 
     }
 }

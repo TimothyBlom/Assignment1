@@ -79,6 +79,11 @@ public class Character {
 
     public static void main(String[] args) throws Exception {
 
+//Bellow is where you can change certain settings and see the magic happen.
+//Try changing the class to either Heavy, Sniper, Medic or engineer.
+//Try changing the level.
+//Try changing armor types to either Beskar, Stealth, Commando or Environment.
+
         Character player = new Character(
                 "Tim",
                 "Heavy",
@@ -188,7 +193,7 @@ public class Character {
         int characterDPS = weaponDPS * (1 + totalPrimaryAttributes/10);
 
 //Checks if armour type and class are compatible and throws exception with explanation if not
-//Note: This is probably not DRY, I know
+//Note: This is probably not DRY, I know.
         if (        player.CharacterClass.equals("Sniper") && !player.EquippedHeadArmor.equals("Stealth") ){
                         throw new Exception(player.EquippedHeadArmor + " head armor is not compatible with the Sniper class. Please choose Stealth");
         } else if ( player.CharacterClass.equals("Sniper") && !player.EquippedBodyArmor.equals("Stealth") ){
@@ -238,7 +243,7 @@ public class Character {
         System.out.println("Base primary attribute points: " + BaseAttributePoints);
         System.out.println("Total primary attribute points: " + totalPrimaryAttributes);
         System.out.println("Total character DPS: " + characterDPS);
-        ClassMedic.Medic(); //delete this
+        Weapon.main();
 
     }
 }
