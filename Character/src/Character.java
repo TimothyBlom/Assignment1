@@ -4,7 +4,8 @@ public class Character {
     String CharacterClass;
     int Level;
     String EquippedWeaponType;
-    int EquippedWeaponDPS;
+    int EquippedWeaponDamage;
+    int EquippedWeaponSpeed;
     String EquippedHeadArmor;
     int HeadArmorStrength;
     int HeadArmorDexterity;
@@ -29,7 +30,8 @@ public class Character {
         String CharacterClass,
         int Level,
         String EquippedWeaponType,
-        int EquippedWeaponDPS,
+        int EquippedWeaponDamage,
+        int EquippedWeaponSpeed,
         String EquippedHeadArmor,
         int HeadArmorStrength,
         int HeadArmorDexterity,
@@ -53,7 +55,8 @@ public class Character {
         this.CharacterClass = CharacterClass;
         this.Level = Level;
         this.EquippedWeaponType = EquippedWeaponType;
-        this.EquippedWeaponDPS = EquippedWeaponDPS;
+        this.EquippedWeaponDamage = EquippedWeaponDamage;
+        this.EquippedWeaponSpeed = EquippedWeaponSpeed;
         this.EquippedHeadArmor = EquippedHeadArmor;
         this.HeadArmorStrength = HeadArmorStrength;
         this.HeadArmorDexterity = HeadArmorDexterity;
@@ -74,26 +77,27 @@ public class Character {
         this.DPS = DPS;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Character player = new Character(
                 "Tim",
                 "Heavy",
-                1,
+                2,
                 "Assault Rifle",
-                0,
-                "Beskar Helmet",
-                0,
-                0,
-                0,
-                "Beskar Body Armor",
-                0,
-                0,
-                0,
-                "Beskar Pants",
-                0,
-                0,
-                0,
+                3,
+                2,
+                "Commando",
+                1,
+                1,
+                1,
+                "Beskar",
+                1,
+                1,
+                1,
+                "Beskar",
+                1,
+                1,
+                1,
                 0,
                 0,
                 0,
@@ -102,11 +106,13 @@ public class Character {
                 0
         );
 
+//Code from this line to line 188 focus on the interaction of character stats with each other
+
+//starts player with the appropriate amount of attribute points based on character class
         int CharacterStartStrength = 0;
         int CharacterStartDexterity = 0;
         int CharacterStartIntelligence = 0;
 
-        //starts player with the appropriate amount of attribute points based on character class
         if (player.CharacterClass.equals("Engineer")) {
             CharacterStartStrength = player.CharacterStrength + 1;
             CharacterStartDexterity = player.CharacterDexterity + 1;
@@ -125,80 +131,110 @@ public class Character {
             CharacterStartIntelligence = player.CharacterIntelligence + 1;
         }
 
+//Adds appropriate amount of attribute points based on character level and class
         int CharacterStrength = CharacterStartStrength;
         int CharacterDexterity = CharacterStartDexterity;
         int CharacterIntelligence = CharacterStartIntelligence;
 
-        //adds appropriate amount of attribute points based on character level and class
         for (int i = 2; i <= player.Level; ++i) {
             if (player.CharacterClass.equals("Engineer")) {
                 CharacterStrength = CharacterStrength + 1;
                 CharacterDexterity = CharacterDexterity + 4;
                 CharacterIntelligence = CharacterIntelligence + 5;
-                System.out.println("ENGINEER CLASS LEVELD UP");
             } else if (player.CharacterClass.equals("Medic")) {
                 CharacterStrength = CharacterStrength + 1;
                 CharacterDexterity = CharacterDexterity + 5;
                 CharacterIntelligence = CharacterIntelligence + 1;
-                System.out.println("MEDIC CLASS LEVELD UP");
             } else if (player.CharacterClass.equals("Sniper")) {
                 CharacterStrength = CharacterStrength + 1;
                 CharacterDexterity = CharacterDexterity + 4;
                 CharacterIntelligence = CharacterIntelligence + 1;
-                System.out.println("SNIPER CLASS LEVELD UP");
             } else if (player.CharacterClass.equals("Heavy")) {
                 CharacterStrength = CharacterStrength + 3;
                 CharacterDexterity = CharacterDexterity + 2;
                 CharacterIntelligence = CharacterIntelligence + 1;
-                System.out.println("HEAVY CLASS LEVELD UP " + CharacterStrength);
             }
         }
 
-        //Makes base attribute same value as the class specific primary attribute.
+//Makes base attribute same value as the class specific primary attribute.
         int BaseAttributePoints = 0;
-        int HeadAttributePoints = 0;
-        int BodyAttributePoints = 0;
-        int LegAttributePoints = 0;
 
         if (player.CharacterClass.equals("Engineer")) {
             BaseAttributePoints = CharacterIntelligence;
-            HeadAttributePoints = player.HeadArmorIntelligence;
-            BodyAttributePoints = player.BodyArmorIntelligence;
-            LegAttributePoints = player.LegArmorIntelligence;
-        } else if (player.CharacterClass.equals("Medic")){
+        } else if (player.CharacterClass.equals("Medic") || player.CharacterClass.equals("Sniper")){
             BaseAttributePoints = CharacterDexterity;
-            HeadAttributePoints = player.HeadArmorDexterity;
-            BodyAttributePoints = player.BodyArmorDexterity;
-            LegAttributePoints = player.LegArmorDexterity;
-        } else if (player.CharacterClass.equals("Sniper")){
-            BaseAttributePoints = CharacterDexterity;
-            HeadAttributePoints = player.HeadArmorDexterity;
-            BodyAttributePoints = player.BodyArmorDexterity;
-            LegAttributePoints = player.LegArmorDexterity;
         } else if (player.CharacterClass.equals("Heavy")){
             BaseAttributePoints = CharacterStrength;
-            HeadAttributePoints = player.HeadArmorStrength;
-            BodyAttributePoints = player.BodyArmorStrength;
-            LegAttributePoints = player.LegArmorStrength;
         }
 
-        //Calculates total amount of primary attribute points by adding attribute points from base and armor.
-        int totalPrimaryAttributes = BaseAttributePoints + HeadAttributePoints + BodyAttributePoints + LegAttributePoints;
+        int totalArmorAttributes =
+                player.HeadArmorStrength +
+                player.HeadArmorDexterity +
+                player.HeadArmorIntelligence +
+                player.BodyArmorStrength +
+                player.BodyArmorDexterity +
+                player.BodyArmorIntelligence +
+                player.LegArmorStrength +
+                player.LegArmorDexterity +
+                player.LegArmorIntelligence;
 
-        //Calculates total character DPS by adding base character DPS with Weapon DPS.
-        int characterDPS = player.EquippedWeaponDPS + player.DPS;
+//Calculates total amount of primary attribute points by adding base attribute points and all armor attribute points.
+        int totalPrimaryAttributes = BaseAttributePoints + totalArmorAttributes;
 
-        //character sheet
+//Calculates weapon DPS from weapon damage and speed
+        int weaponDPS = player.EquippedWeaponDamage * player.EquippedWeaponSpeed;
+
+//Calculates total character DPS by adding base character DPS with Weapon DPS. (It is supposed to be 100, not 10, but that is unbalanced and always returns 0)
+        int characterDPS = weaponDPS * (1 + totalPrimaryAttributes/10);
+
+//Checks if armour type and class are compatible and throws exception with explanation if not
+//Note: This is probably not DRY, I know
+        if (        player.CharacterClass.equals("Sniper") && !player.EquippedHeadArmor.equals("Stealth") ){
+                        throw new Exception(player.EquippedHeadArmor + " head armor is not compatible with the Sniper class. Please choose Stealth");
+        } else if ( player.CharacterClass.equals("Sniper") && !player.EquippedBodyArmor.equals("Stealth") ){
+                        throw new Exception(player.EquippedBodyArmor + " body armor is not compatible with the Sniper class. Please choose Stealth");
+        } else if ( player.CharacterClass.equals("Sniper") && !player.EquippedLegArmor.equals("Stealth") ) {
+                        throw new Exception(player.EquippedLegArmor + " leg armor is not compatible with the Sniper class. Please choose Stealth");
+        } else if ( (player.CharacterClass.equals("Heavy") && !player.EquippedHeadArmor.equals("Beskar")) &&
+                    (player.CharacterClass.equals("Heavy") && !player.EquippedHeadArmor.equals("Commando")) ){
+                        throw new Exception(player.EquippedHeadArmor + " head armor is not compatible with the Heavy class. Please choose Beskar or Commando");
+        } else if ( (player.CharacterClass.equals("Heavy") && !player.EquippedBodyArmor.equals("Beskar")) &&
+                    (player.CharacterClass.equals("Heavy") && !player.EquippedBodyArmor.equals("Commando")) ){
+                        throw new Exception(player.EquippedBodyArmor + " body armor is not compatible with the Heavy class. Please choose Beskar or Commando");
+        } else if ( (player.CharacterClass.equals("Heavy") && !player.EquippedLegArmor.equals("Beskar")) &&
+                    (player.CharacterClass.equals("Heavy") && !player.EquippedLegArmor.equals("Commando")) ){
+                        throw new Exception(player.EquippedLegArmor + " leg armor is not compatible with the Heavy class. Please choose Beskar or Commando");
+        } else if ( (player.CharacterClass.equals("Engineer") && !player.EquippedHeadArmor.equals("Commando")) &&
+                    (player.CharacterClass.equals("Engineer") && !player.EquippedHeadArmor.equals("Environment")) ){
+                        throw new Exception(player.EquippedHeadArmor + " head armor is not compatible with the Engineer class. Please choose Environment or Commando");
+        } else if ( (player.CharacterClass.equals("Engineer") && !player.EquippedBodyArmor.equals("Commando")) &&
+                    (player.CharacterClass.equals("Engineer") && !player.EquippedBodyArmor.equals("Environment")) ){
+                        throw new Exception(player.EquippedBodyArmor + " body armor is not compatible with the Engineer class. Please choose Environment or Commando");
+        } else if ( (player.CharacterClass.equals("Engineer") && !player.EquippedLegArmor.equals("Commando")) &&
+                    (player.CharacterClass.equals("Engineer") && !player.EquippedLegArmor.equals("Environment")) ){
+                        throw new Exception(player.EquippedLegArmor + " leg armor is not compatible with the Engineer class. Please choose Environment or Commando");
+        } else if ( (player.CharacterClass.equals("Medic") && !player.EquippedHeadArmor.equals("Commando")) &&
+                    (player.CharacterClass.equals("Medic") && !player.EquippedHeadArmor.equals("Environment")) ){
+                        throw new Exception(player.EquippedHeadArmor + " head armor is not compatible with the Medic class. Please choose Environment or Commando");
+        } else if ( (player.CharacterClass.equals("Medic") && !player.EquippedBodyArmor.equals("Commando")) &&
+                    (player.CharacterClass.equals("Medic") && !player.EquippedBodyArmor.equals("Environment")) ){
+                        throw new Exception(player.EquippedBodyArmor + " body armor is not compatible with the Medic class. Please choose Environment or Commando");
+        } else if ( (player.CharacterClass.equals("Medic") && !player.EquippedLegArmor.equals("Commando")) &&
+                    (player.CharacterClass.equals("Medic") && !player.EquippedLegArmor.equals("Environment")) ){
+                        throw new Exception(player.EquippedLegArmor + " leg armor is not compatible with the Medic class. Please choose Environment or Commando");
+        }
+
+//Character sheet
         System.out.println("Name: " + player.Name);
         System.out.println("Class: " + player.CharacterClass);
         System.out.println("Level: " + player.Level);
-        System.out.println("Equipped weapon name: " + player.EquippedWeaponType);
-        System.out.println("Helmet: " + player.EquippedHeadArmor);
-        System.out.println("Body armour: " + player.EquippedBodyArmor);
-        System.out.println("Leg armour: " + player.EquippedLegArmor);
-        System.out.println("Strength points: " + CharacterStrength);
-        System.out.println("Dexterity points: " + CharacterDexterity);
-        System.out.println("Intelligence points: " + CharacterIntelligence);
+        System.out.println("Equipped weapon type: " + player.EquippedWeaponType);
+        System.out.println("Equipped helmet armor type: " + player.EquippedHeadArmor);
+        System.out.println("Equipped body armor type: " + player.EquippedBodyArmor);
+        System.out.println("Equipped leg armor type: " + player.EquippedLegArmor);
+        System.out.println("Character strength points: " + CharacterStrength);
+        System.out.println("Character dexterity points: " + CharacterDexterity);
+        System.out.println("Character intelligence points: " + CharacterIntelligence);
         System.out.println("Base primary attribute points: " + BaseAttributePoints);
         System.out.println("Total primary attribute points: " + totalPrimaryAttributes);
         System.out.println("Total character DPS: " + characterDPS);
