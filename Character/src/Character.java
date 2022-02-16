@@ -23,7 +23,6 @@ public class Character {
     int CharacterIntelligence;
     int BasePrimaryAttributes;
     int TotalPrimaryAttributes;
-    int DPS;
 
     public Character(
         String Name,
@@ -48,8 +47,7 @@ public class Character {
         int CharacterDexterity,
         int CharacterIntelligence,
         int BasePrimaryAttributes,
-        int TotalPrimaryAttributes,
-        int DPS
+        int TotalPrimaryAttributes
     ){
         this.Name = Name;
         this.CharacterClass = CharacterClass;
@@ -74,13 +72,12 @@ public class Character {
         this.CharacterIntelligence = CharacterIntelligence;
         this.BasePrimaryAttributes = BasePrimaryAttributes;
         this.TotalPrimaryAttributes = TotalPrimaryAttributes;
-        this.DPS = DPS;
     }
 
     public static void main(String[] args) throws Exception {
 
 //Bellow is where you can change certain settings and see the magic happen.
-//Try changing the class to either Heavy, Sniper, Medic or engineer.
+//Try changing the character class to either Heavy, Sniper, Medic or engineer.
 //Try changing the level.
 //Try changing armor types to either Beskar, Stealth, Commando or Environment.
 
@@ -103,7 +100,6 @@ public class Character {
                 1,
                 1,
                 1,
-                0,
                 0,
                 0,
                 0,
@@ -193,7 +189,7 @@ public class Character {
         int characterDPS = weaponDPS * (1 + totalPrimaryAttributes/10);
 
 //Checks if armour type and class are compatible and throws exception with explanation if not
-//Note: This is probably not DRY, I know.
+//Note: This is probably not DRY, I know. Also, shouldn't the && not be ||?
         if (        player.CharacterClass.equals("Sniper") && !player.EquippedHeadArmor.equals("Stealth") ){
                         throw new Exception(player.EquippedHeadArmor + " head armor is not compatible with the Sniper class. Please choose Stealth");
         } else if ( player.CharacterClass.equals("Sniper") && !player.EquippedBodyArmor.equals("Stealth") ){

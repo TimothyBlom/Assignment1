@@ -1,35 +1,25 @@
-Assignment 1: JAVA RPG Characters.
-
-By: Timothy Blom
+Assignment 1: Java RPG Character								By Timothy Blom
 
 For this assignment, as I understand it, I need to build a system where you can customise a RPG character. The 
-character has stats and equipment that compliment eachother (for example, updating character level increases 
-character attributes), and equipment can be character class specific.
+character has stats and items that can effect eachother.
 
-No character sheets or any front-end is required for this assignment.
+No character sheets or any front-end is required for this assignment. I have also taken the liberty to change the 
+names given in the PDF for my own amusement (permission was granted).
 
-Code wise, all I need to do is make classes with values that sometimes effect eachother when put together, and
-to test it with user testing. A lot of time and effort has gone in understanding the "game rules" from the 
-Assignment1_JAVA_RPGCharacters.pdf, I am assuming learning and figuring out how this "game" works before actual 
-coding it is a big part of the assignment and supposed to take a few days.
+How To Use---------------------------------------------------------------------------------------------------------
+-Open the Character file in Intelij.
+-Go to line 87.
+-From there, change the class, level or armour type as described in the commenting above it.
+-Run the code, the stats will be printed to the console.
 
-I have also taken the liberty to change the names given in the PDF for my own amusement (permission was granted).
-
-
-
-
-
-Goals for this assignment------------------------------------------------------------------------------------------
--To create a player, character classes, weapons and armors.
--Player loadout and level can change player attributes & DPS.
--Some loadout options are restricted to a certain class or level.
--Functionalaty can be tested through user testing.
+Note: The classes for the weapons, armour and character classes are there, just not implemented inside 
+the character class. Also unit testing is not completed. I ran out of time to figure out how those work.
 
 
+To make it simple, below are the "rules" of the RPG system and the names, for refrence.
 
 
-
-What I need to make------------------------------------------------------------------------------------------------
+Classes-----------------------------------------------------------------------------------------------------------
 Player character with the following values:
 -Name
 -Class
@@ -44,6 +34,7 @@ Player character with the following values:
 -Base primary attributes (based on class specific primary attribute)
 -Total primary attributes (based on base primary attributes & equiped armour attributes)
 -Character DPS (based on equiped weapon DPS & total primary attributes)
+
 
 Weapon types:
 -Pistol
@@ -63,6 +54,7 @@ Each weapon has the following values:
 -Attack speed
 -DPS (based an damage & attack speed)
 
+
 Armor:
 -Stealth (usable only to Sniper class) (lore: near invisible but minimal protection)
 -Environment (usable only for Engineer & Medic class) (lore: protect user against enviromental dangers)
@@ -79,19 +71,13 @@ Each armor has the following values:
 -Intelligence bonus
 
 
-
-
-
-Classes---------------------------------------------------------------------------------------------------------
+Classes:
 -Engineer
 -Medic
 -Sniper
 -Heavy
 
-
-
-
-Attributes per class--------------------------------------------------------------------------------------------
+Attributes per class:
 Engineer:
 -Level one attribute = 1 Strenght, 1 Dexterity, 8 Intelligence.
 -Increase per lvl-up = 1 Strenght, 4 Dexterity, 5 Intelligence.
@@ -111,8 +97,3 @@ Heavy:
 -Level one attribute = 5 Strenght, 2 Dexterity, 1 Intelligence.
 -Increase per lvl-up = 3 Strenght, 2 Dexterity, 1 Intelligence.
 -Primary attribute is Strenght
-
-
-
-
-
